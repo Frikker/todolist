@@ -1,6 +1,6 @@
 class ProjectController < ApplicationController
   def index
-  	render json: Category.all
+    render json: Category.all
   end
 
   def create
@@ -13,7 +13,7 @@ class ProjectController < ApplicationController
     title = params[:title].nil? ? project.title : params[:title]
     category_id = params[:category_id].nil? ? project.category_id : params[:category_id]
     completed = params[:completed].nil? ? project.completed : params[:completed]
-    validate Projects::Update.run(title: title, category_id: category_id,
+    validate Projects::Update.run(id: project.id, title: title, category_id: category_id,
                                   completed: completed)
   end
 end
