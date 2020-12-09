@@ -9,7 +9,7 @@ class ProjectController < ApplicationController
   end
 
   def update
-    project = Project.find(params[:id])
+    project = Project.find(params[:project_id])
     title = params[:title].nil? ? project.title : params[:title]
     category_id = params[:category_id].nil? ? project.category_id : params[:category_id]
     completed = params[:completed].nil? ? project.completed : params[:completed]
