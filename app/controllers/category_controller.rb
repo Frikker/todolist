@@ -2,6 +2,6 @@
 
 class CategoryController < ApplicationController
   def create
-    validate Categories::Create.run()
+    validate Categories::Create.run(name: params[:name])
   end
 end
